@@ -20,8 +20,8 @@ mongoose.connect(process.env.DATABASE_URL, {
 
 
 //Middleware...
-app.use('/client', clientController)
 app.use(express.urlencoded({ extended: true }));
+app.use('/clients', clientController)
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
 
