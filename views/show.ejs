@@ -8,20 +8,35 @@
     <title>Show</title>
 </head>
 
-<body class="">
-    <div class="container bg-slate-400 mx-auto flex flex-col justify-between items-center leading-9 mt-20 border-2 shadow-lg p-4">
-        <h3 class="font-serif text-4xl mb-5">
+<body class="min-h-screen bg-slate-900">
+    <div
+        class="container bg-slate-400 mx-auto flex flex-col justify-between items-center leading-9 mt-20 border-2 shadow-lg p-4">
+        <h3 class="font-serif text-4xl mb-5 underline">
             <%= client.name %>
         </h3>
-        <p>The name is <%= client.name %>
+        <p><span class="text-lg font-serif font-bold uppercase ">Name </span>: <%= client.name %>
         </p>
-        <p>Date: <%= client.date %>
+        <p><span class="text-lg font-serif font-bold uppercase">Date of Completion</span>: <%= new
+                Date(client.date).toDateString() %>
         </p>
-        <p>Details: <%= client.details %>
+        <p><span class="text-lg font-serif font-bold uppercase">Details</span>: <%= client.details %>
         </p>
-        <p>Staff: <%= client.Staff %>
-        </p>
+
+        Staff: <%= client.staff %>
+
+
     </div>
+    <p class="text-xs text-white flex justify-center items-center mt-2 font-extralight">CreatedAt: <%= new
+            Date(client.createdAt).toUTCString() %>
+    </p>
+    <div class="flex justify-center items-center">
+        <div
+            class="bg-green-600 text-white py-2 px-2 inline-block text-center mx-7 mt-5 shadow-lg border  hover:scale-110 duration-300 rounded">
+            <a class="mx-5 " href="/clients">HomePage</a>
+        </div>
+    </div>
+
+
 </body>
 
 </html>

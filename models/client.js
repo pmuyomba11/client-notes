@@ -4,7 +4,7 @@ const clientSchema = new Schema({
     name: { type: String },
     date: { type: Date },
     details: { type: String },
-    Staff: { type: String }
+    staff: { type: String }
 },
     { timestamps: true }
 )

@@ -16,15 +16,9 @@ router.get('/', (req, res) => {
     })
 })
 
-//Create
-router.post('/', (req, res) => {
-    Client.create(req.body)
-        .then((createdClient) => {
-            res.send(createdClient)
-        })
-        .catch((err) => {
-            res.status(404).send(err.message)
-        })
+//New router
+router.get('/new', (req, res) => {
+    res.render('new.ejs')
 })
 
 //Show route
