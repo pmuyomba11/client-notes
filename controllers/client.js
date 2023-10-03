@@ -20,6 +20,17 @@ router.get('/', (req, res) => {
 router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
+
+//DELETE route
+router.delete('/:id', (req, res) => {
+    Client.findByIdAndDelete(req.params.id)
+    .then((foundClient) => {
+        res.redirect('/clients')
+    })
+    .catch((err) => {
+        res.status(500).json({error:'Error deleting client'})
+    })
+})
 //create router
 router.post('/', (req, res) => {
    Client.create(req.body)

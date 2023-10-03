@@ -10,24 +10,30 @@
 
 <body class=" bg-slate-200">
     <div>
-    <h1 class="bg-slate-900 py-3 text-4xl text-white flex justify-center items-center border font-serif">Clients</h1>
-    <div class=" py-2 flex justify-center items-center">
-        <a class="inline-block bg-green-700 text-white p-2 hover:scale-105 duration-300 rounded-xl shadow-xl px-4" href="/clients/new">CREATE</a>
+        <h1 class="bg-slate-900 py-3 text-4xl text-white flex justify-center items-center border font-serif">Clients
+        </h1>
+        <div class=" py-2 flex justify-center items-center">
+            <a class="inline-block bg-green-700 text-white p-2 hover:scale-105 duration-300 rounded-xl shadow-xl px-4"
+                href="/clients/new">CREATE</a>
+        </div>
+        <div class="flex justify-center items-center shadow-2xl p-4 font-mono text-lg ">
+            <ul class="container flex flex-col justify-center items-center leading-10">
+                <% clients.forEach((client)=> {%>
+                    <a href="/clients/<%= client._id %>">
+                        <li class="hover:underline">
+                            <%= client.name %>
+
+                            <form class = ""action="/clients/<%= client.id %>?_method=DELETE" method="POST">
+                                <input class="text-xs text-red-700 cursor-pointer mt-1 hover:underline" type="submit" value="Remove">
+                                </form>
+                        </li>
+                    </a>
+                    <%}) %>
+            </ul>
+
+
+        </div>
     </div>
-    <div class="flex justify-center items-center">
-        <ul class="container flex flex-col justify-center items-center leading-10">
-            <% clients.forEach((client)=> {%>
-                <a href="/clients/<%= client._id %>">
-                    <li>
-                        <%= client.name %>
-                    </li>
-                </a>
-                <%}) %>
-        </ul>
-       
-        
-    </div>
-</div>
     <%- include('./partials/footer') %>
 </body>
 

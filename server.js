@@ -21,9 +21,10 @@ mongoose.connect(process.env.DATABASE_URL, {
 
 //Middleware...
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 app.use('/clients', clientController)
 app.use(morgan('dev'));
-app.use(methodOverride('_method'));
+
 
 //Database Error/ Success Messages...
 db.on('connected', () => console.log(`Database Succefully Connected..`));
