@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>HomePage</title>
 </head>
 <body>
-   <h1>HomePage</h1>
-   <ul>
+   <h1 class="bg-slate-400 py-3 text-3xl flex justify-center items-center border">HomePage</h1>
+   <ul class="container flex flex-col justify-center items-center leading-10">
     <% clients.forEach((client) => {%>
-        <li><%= client.name %></li>
+       <a href="/clients/<%= client._id %>"><li><%= client.name %></li></a> 
         <%}) %>
    </ul>
 </body>

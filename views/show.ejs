@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Show</title>
+</head>
+
+<body class="">
+    <div class="container bg-slate-400 mx-auto flex flex-col justify-between items-center leading-9 mt-20 border-2 shadow-lg p-4">
+        <h3 class="font-serif text-4xl mb-5">
+            <%= client.name %>
+        </h3>
+        <p>The name is <%= client.name %>
+        </p>
+        <p>Date: <%= client.date %>
+        </p>
+        <p>Details: <%= client.details %>
+        </p>
+        <p>Staff: <%= client.Staff %>
+        </p>
+    </div>
+</body>
+
+</html>

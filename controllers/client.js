@@ -27,6 +27,17 @@ router.post('/', (req, res) => {
         })
 })
 
-
+//Show route
+router.get('/:id', (req, res) => {
+    Client.findById(req.params.id)
+    .then((foundClient) => {
+        res.render('show.ejs', {
+            client: foundClient
+        })
+    })
+    .catch((err) => {
+        res.status(404).send(err.message)
+    })
+})
 
 module.exports = router
