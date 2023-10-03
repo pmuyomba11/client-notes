@@ -20,7 +20,16 @@ router.get('/', (req, res) => {
 router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
-
+//create router
+router.post('/', (req, res) => {
+   Client.create(req.body)
+   .then((createdClient) => {
+    res.redirect('/clients')
+   })
+   .catch((err) => {
+    res.status(501).send(err.message)
+   })
+})
 //Show route
 router.get('/:id', (req, res) => {
     Client.findById(req.params.id)
