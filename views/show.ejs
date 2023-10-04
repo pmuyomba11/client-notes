@@ -26,14 +26,17 @@
 
 
     </div>
-    <p class="text-xs text-white flex justify-center items-center mt-2 font-extralight">CreatedAt: <%= new
-            Date(client.createdAt).toUTCString() %>
-    </p>
+   <p class="text-xs text-white flex justify-center items-center mt-2 font-extralight">CreatedAt: <%= new Date(client.createdAt).toLocaleString("en-US", {timeZone: "America/New_York"}) %></p>
+
     <div class="flex justify-center items-center">
         <div
             class="bg-green-600 text-white py-2 px-2 inline-block text-center mx-7 mt-5 shadow-lg border  hover:scale-110 duration-300 rounded">
             <a class="mx-5 " href="/clients">HomePage</a>
         </div>
+        <div
+        class="bg-green-600 text-white py-2 px-2 inline-block text-center mx-7 mt-5 shadow-lg border  hover:scale-110 duration-300 rounded">
+        <a class="mx-10 " href="/clients/<%= client._id %>/edit">Edit</a>
+    </div>
     </div>
 
 

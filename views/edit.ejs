@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Edit Page</title>
+</head>
+
+<body class=" bg-slate-200 mx-auto">
+    <div class=" mx-auto">
+        <h1 class="text-center font-bold text-2xl bg-slate-800 text-white py-4">Edit Client Data</h1>
+        <div class="flex justify-center items-center mt-7">
+            <form class="w-1/2 p-3 shadow-2xl mx-auto" action="/clients/<%= clientTobeEdited._id %>?_method=PUT" method="post">
+                <div class="flex flex-col gap-4">
+              <span class="font-light">Name</span> <input class="p-2 rounded  outline-lime-500" type="text" name="name" value="<%= clientTobeEdited.name %>"><br>
+               <span class="font-light">Date of Completion</span> <input class="p-2 rounded  outline-lime-500" type="date" name="date" value="<%=clientTobeEdited.date  %>"><br>
+               <span class="font-light">Details/Notes</span> <input class="p-7 rounded  outline-lime-500" type="text" name="details" value="<%= clientTobeEdited.details %>"><br>
+                <span class="font-light">Staff on Duty</span> <input class="p-2 rounded outline-lime-500" type="text" name="staff" value="<%= clientTobeEdited.staff %>"><br>
+                <input class="bg-green-700 text-white p-2 hover:scale-105 duration-300 rounded " type="submit" value="Update Client">
+            </div>
+            </form>
+        </div>
+    </div>
+
+</body>
